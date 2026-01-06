@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Codekar Blogs</h1>
+    <button id="stop">Stop</button>
+    <script>
+        const sayMohit = function(){
+            console.log("Mohit");
+        }
+        const changeText = function(){
+            document.querySelector('h1').innerHTML = "Best Codekar blogs"
+        }
+
+        const changeMe = setTimeout(changeText, 2000)
+
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearTimeout(changeMe)
+            console.log("STOPPED");
+        })
+        // setTimeout(function(){
+        //     console.log("Mohit");
+        // }, 2000)
+    
+        // document.querySelector('h1').innerHTML = "Best Edtech Service"
+        // in SetInterval we do things repeatedly in given interval of time while in setTimeout we only do any operation only 1 time
+
+        setTimeout(sayMohit, 2000);
+    </script>
+</body>
+</html>

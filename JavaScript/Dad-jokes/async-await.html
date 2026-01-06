@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: rgb(18, 17, 17);
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+        .container{
+            background-color: white;
+            text-align: center;
+            padding: 1rem 3rem;
+        }
+
+        h1{
+            margin-bottom: 1rem;
+        }
+
+        #fetchJoke{
+            padding: .5rem;
+            border: none;
+            border-radius: 25px;
+            border: 2px solid black;
+            background-color: rgb(237, 237, 75);
+            margin-top: 1rem;
+        }
+        #fetchJoke:hover{
+            transition: all 0.2s linear;
+            background-color: rgb(245, 19, 162);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Welcome to Dad Jokes!</h1>
+        <section class="api_body"></section>
+        <button id="fetchJoke">Get Another Joke</button>
+    </div>
+
+    <script>
+        const apiBody = document.querySelector(".api_body");
+        const apiUrl = "https://icanhazdadjoke.com/";
+
+        // <---
+        async function fetchData() {
+            // For error handling we use try catch
+            try{
+                const res = await fetch(apiUrl, {
+                    headers: {
+                        Accept : "application/json",
+                    },
+                });
+    
+                const data = await res.json();
+                console.log(data.joke);
+                apiBody.innerHTML = data.joke;
+                
+            }catch(error){
+                apiBody.innerHTML = error;
+                console.log(error);
+            }
+        }
+        // ---> scope of this function
+        // All this will be covered in try
+
+        // fetchData();
+        document.getElementById("fetchJoke").addEventListener("click", fetchData);
+    </script>
+</body>
+</html>
