@@ -43,3 +43,17 @@ input {
 #submit-btn:hover {
     background-color: #2980b9;
 }
+
+input.error{
+    border: 2px solid red;
+}
+
+input.success{
+    border: 2px solid green;
+}
+
+.error-msg {
+    color: red;
+    font-size: 12px;
+    height: 14px;
+}
