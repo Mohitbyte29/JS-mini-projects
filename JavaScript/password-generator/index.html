@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Password Generator</h2>
+
+    <div class="password-box">
+      <input type="text" value="cv||kcbo8};!" readonly />
+      <button class="copy-btn">📋</button>
+    </div>
+
+    <div class="setting">
+      <label>Password Length</label>
+      <div class="length-box">
+        <input type="range" min="4" max="20" value="12" />
+        <span>12</span>
+      </div>
+    </div>
+
+    <div class="options">
+      <label><input type="checkbox" checked /> Include Uppercase</label>
+      <label><input type="checkbox" checked /> Include Lowercase</label>
+      <label><input type="checkbox" checked /> Include Numbers</label>
+      <label><input type="checkbox" checked /> Include Symbols</label>
+    </div>
+
+    <button class="generate-btn">🔑 Generate Password</button>
+
+    <div class="strength">
+      <span>Password Strength:</span>
+      <span class="strong">Strong</span>
+    </div>
+
+    <div class="strength-bar">
+      <div class="bar"></div>
+    </div>
+  </div>
+
+</body>
+</html>
